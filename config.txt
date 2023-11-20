@@ -1,2 +1,2 @@
-dao.DaoImpl
-metier.MetierImpl
+net.elazzaouy.dao.DaoImpl
+net.elazzaouy.metier.MetierImpl
