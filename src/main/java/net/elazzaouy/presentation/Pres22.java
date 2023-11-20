@@ -9,18 +9,20 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Scanner;
 
-public class Pres2 {
-    public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+public class Pres22 {
+    public static void main(String[] args) throws Exception {
         System.out.println("----------- Instanciation Dynamique --------------- ");
 
         //DaoImpl dao = new DaoImpl();
-        Scanner scanner = new Scanner(new File("config.txt"));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Donner la classe de la couche DAO :");
         String daoClassName = scanner.nextLine();
         System.out.println(daoClassName);
         Class cDao = Class.forName(daoClassName); // Charge la classe DaoImpl dans la memoire
         IDao dao =(IDao) cDao.getConstructor().newInstance(); // ==> new DaoImpl(); (Instanciation Dynamique)
 
         //MetierImpl metier = new MetierImpl();
+        System.out.println("Donner la classe de la couche Métier :");
         String metierClassName = scanner.nextLine();
         Class cMetier = Class.forName(metierClassName);
         IMetier metier = (IMetier) cMetier.getConstructor().newInstance();
