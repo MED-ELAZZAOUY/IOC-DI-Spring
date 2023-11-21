@@ -1,8 +1,17 @@
 package net.elazzaouy.metier;
 
 import net.elazzaouy.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+/** @Component :
+ *  Spring détectera automatiquement la classe "MetierImpl" lors du balayage du chemin de classe
+ *  (classpath scanning) et l'enregistrera comme un bean dans le contexte de l'application.
+ */
+@Component
 public class MetierImpl implements IMetier {
+
+    @Autowired // effectuer l'injection de dépendances automatique
     private IDao dao;  // Couplage Faible
     /**
      * Le couplage faible entre une interface et une classe est une bonne pratique de conception logicielle
