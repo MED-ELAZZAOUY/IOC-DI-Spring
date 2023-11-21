@@ -15,8 +15,8 @@ public class Pres1 {
          */
 
         DaoImpl2 dao = new DaoImpl2(); // Instanciation statique
-        MetierImpl metier = new MetierImpl();
-        metier.setDao(dao); //  Injection des dependances
+        MetierImpl metier = new MetierImpl(dao); // injection via le Constructeur
+        //metier.setDao(dao); //  Injection des dependances
         System.out.println("Res = "+metier.calcul());
 
     }

@@ -5,7 +5,8 @@
 
     <bean id="dao"  class="net.elazzaouy.extension.DaoImplVCapteur"></bean>
     <bean id="metier" class="net.elazzaouy.metier.MetierImpl">
-        <property name="dao" ref="dao"></property>
+        <!--<property name="dao" ref="dao"></property>-->
+        <constructor-arg ref="dao"></constructor-arg>
     </bean>
 
 </beans>
